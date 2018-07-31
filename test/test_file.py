@@ -8,4 +8,4 @@ class MyTestCase(TestCase):
     return
 
   def test_qwerty(self):
-    assert untested.qwerty() == 6
+    assert tested.qwerty() == 6
