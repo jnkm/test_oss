@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 import hello_world
-import untested
+import tested
 
 class MyTestCase(TestCase):
   def test_pass(self):
