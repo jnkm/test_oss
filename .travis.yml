@@ -19,5 +19,5 @@ deploy:
   on:
     branch: deploy
     tags: true
-  python"
+  python:
   - '3.6'
