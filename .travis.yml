@@ -7,13 +7,13 @@ install:
   - pip install -r test_requirements.txt
 script:
   - nosetests --with-coverage test/*
+after_success:
+  - codecov
 
 jobs:
   include:
     - stage: release
       python: '3.6'
-      after_success:
-        - codecov
       deploy:
         provider: pypi
         server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
