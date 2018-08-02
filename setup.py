@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 import re
+import os
 
 
 VERSION_RE = re.compile(r'''__version__ = ['"]([0-9.]+)['"]''')
