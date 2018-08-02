@@ -1,26 +1,19 @@
 language: python
 python:
-- '3.4'
-- '3.5'
-- '3.6'
+  - '3.4'
+  - '3.5'
 install:
-- pip install -r requirements.txt
-- pip install -r test_requirements.txt
+  - pip install -r requirements.txt
+  - pip install -r test_requirements.txt
+script:
+  - nosetests --with-coverage test/*
 
 jobs:
   include:
-    - stage: unit tests
-        script:
-          - nosetests --with-coverage test/unit/
-        after_success:
-          - codecov
-    - stage: integration tests
-        script:
-          - nosetests --with-coverage test/integration/
-        after_success:
-          - codecov
     - stage: release
       python: '3.6'
+      after_success:
+        - codecov
       deploy:
         provider: pypi
         server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
