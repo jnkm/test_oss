@@ -1,31 +1,18 @@
 language: python
+python:
+  - '3.4'
+  - '3.5'
+  - '3.6'
+install:
+  - pip install -r requirements.txt
+  - pip install -r test_requirements.txt
+script:
+  - nosetests --with-coverage
+after_success:
+  - codecov
 
 jobs:
   include:
-    - stage: unit tests
-      python:
-        - '3.4'
-        - '3.5'
-        - '3.6'
-      install:
-        - pip install -r requirements.txt
-        - pip install -r test_requirements.txt
-      script:
-        - nosetests --with-coverage test/unit/
-      after_success:
-        - codecov
-    - stage: integration tests
-      python:
-        - '3.4'
-        - '3.5'
-        - '3.6'
-      install:
-      - pip install -r requirements.txt
-      - pip install -r test_requirements.txt
-      script:
-        - nosetests --with-coverage test/integration/
-      after_success:
-        - codecov
     - stage: release
       python: '3.6'
       deploy:
