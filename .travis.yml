@@ -19,4 +19,5 @@ deploy:
   on:
     branch: deploy
     tags: true
-  distributions: $DIST
+  python"
+  - '3.6'
