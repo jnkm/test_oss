@@ -16,7 +16,7 @@ def get_version():
 
 setup(
     name="test_fungi-d",
-    version="0.0.2",
+    version=get_version(),
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
