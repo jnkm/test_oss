@@ -10,15 +10,15 @@ install:
 jobs:
   include:
     - stage: unit tests
-        script:
-          - nosetests --with-coverage test/unit/
-        after_success:
-          - codecov
+      script:
+        - nosetests --with-coverage test/unit/
+      after_success:
+        - codecov
     - stage: integration tests
-        script:
-          - nosetests --with-coverage test/integration/
-        after_success:
-          - codecov
+      script:
+        - nosetests --with-coverage test/integration/
+      after_success:
+        - codecov
     - stage: release
       python: '3.6'
       deploy:
