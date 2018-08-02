@@ -6,14 +6,20 @@ python:
 install:
 - pip install -r requirements.txt
 - pip install -r test_requirements.txt
-script:
-- nosetests --with-coverage
-after_success:
-- codecov
 
 jobs:
   include:
-    - stage: PyPi Release
+    - stage: unit tests
+        script:
+          - nosetests --with-coverage test/unit/
+        after_success:
+          - codecov
+    - stage: integration tests
+        script:
+          - nosetests --with-coverage test/integration/
+        after_success:
+          - codecov
+    - stage: release
       python: '3.6'
       deploy:
         provider: pypi
