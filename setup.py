@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 
 def get_version():
-    init = open(os.path.join(ROOT, 'boto3', '__init__.py')).read()
+    init = open(os.path.join(ROOT, 'src', '__init__.py')).read()
     return VERSION_RE.search(init).group(1)
 
 
