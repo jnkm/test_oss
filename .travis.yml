@@ -12,7 +12,7 @@ after_success:
 - codecov
 deploy:
   provider: pypi
-  server: https://test.pypi.org/legacy # Remove for deployment to official PyPi repo
+  server: https://test.pypi.org/legacy/ # Remove for deployment to official PyPi repo
   user: jnkm
   password:
     secure: IDzZS7+ypRDdOkUYDOfJ6yMzn+b5vwedOXVmrRxNC/qW3LCb0uFD4bT0uxgwMEzsiFpBFXnrW3oBszNpL/9A/yLmjXKvfmy9kl8iEAUEaqFgKVeYnCRtnyU7JK4LfmaZfINqf8gv0rWbDJ/p8bUgZoS6H3XBwyAm5xy9wRj81GO0HgaNvDn4e1gCxLz+LH4phYom3oCKGHHvD0i9/EU7ljoFGLFYWM2skS51Gq7mlUJ+w69LS94LBeLljwW73TzJs6r9Whrgxh5J/OReyuH7jwuYyIoFoV4d9iS/GZelKePPVIn4ZXd5rYvrBTBaHMZYAaNc7BrlAYNzbXLaIUlCWmeK8tUr0D11n37IP/XXbZh0W/Au4oQ/If0G3wdQwoLJ/h4ZlcB7HvWmH2KXarsiGIeJHFfCqKE++J2WXRBZUXqPEN6ATIvCc7NqcxBj2vcU5xbJ7Jt/6fLkKmAoyO4prTdv7SV/N4wujMkh2dHk+HG3uCpchrU3TAFVA/USCQyM4OHo0VOUvQCKErOaKh5HqALg6givEPDUvQce6gHPjeTcjamXj1FLsmt1db1/MXOXy3ttn1sxRktHZ7rY8wDiKR8y4hTMiWYigsG6InRev432XAOASQh5EEOmZhM80LZ0foqfKVSCCPpd2WxM1U/phFMm0YXg3tcOjsNUNVYPaps=
