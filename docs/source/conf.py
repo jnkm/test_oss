@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('../../src/'))
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 import sys
-from unittest.mock import MagicMock
+
 
 
 #on_rtd = True
