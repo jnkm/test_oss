@@ -6,3 +6,6 @@ def hello_world():
 def second_function():
   x = 1 + 2
   print(x)
+
+def say_hi(name):
+  return 'hi ' + name
