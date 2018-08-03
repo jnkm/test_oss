@@ -20,5 +20,5 @@ coverage:
 
 
 comment:
-  layout: "header, diff, changes, suggestions"
+  layout: "header, diff, changes, suggestions, tree"
   behavior: default
