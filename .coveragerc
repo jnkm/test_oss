@@ -1,5 +1,5 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-source = GPy
-omit = ./GPy/examples/*.py, ./GPy/testing/*.py, travis_tests.py, setup.py, ./GPy/__version__.py
+source = src
+omit = ./test/*.py, setup.py
