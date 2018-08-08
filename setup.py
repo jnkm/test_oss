@@ -22,8 +22,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
-    packages=find_packages(where='projname', exclude=['tests*']),
-    package_dir={"": "projname"},
+    packages=find_packages(exclude=['tests*']),
     license="Apache License 2.0",
     classifiers=(
         'Programming Language :: Python :: 3',
