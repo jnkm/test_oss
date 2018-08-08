@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-import hello_world
-import untested
+from projname import hello_world
+from projname import untested
 
 
 class MyTestCase(TestCase):
