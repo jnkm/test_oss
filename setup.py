@@ -1,10 +1,8 @@
 from setuptools import setup, find_packages
-import re
 import os
 
 
 ROOT = os.path.dirname(__file__)
-VERSION_RE = re.compile(r'''__version__ = ['"]([0-9.]+)['"]''')
 
 
 with open("README.md", "r") as fh:
@@ -12,8 +10,7 @@ with open("README.md", "r") as fh:
 
 
 def get_version():
-    init = open(os.path.join(ROOT, 'src', '__init__.py')).read()
-    return VERSION_RE.search(init).group(1)
+    return open(os.path.join(ROOT, 'VERSION')).read()
 
 
 setup(
