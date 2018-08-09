@@ -1,1 +1,1 @@
-import goodbye
+# init file
