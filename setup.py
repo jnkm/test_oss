@@ -2,20 +2,17 @@ from setuptools import setup, find_packages
 import os
 
 
-ROOT = os.path.dirname(__file__)
-
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
-def get_version():
-    return open(os.path.join(ROOT, 'VERSION')).read()
+# get __version__ variable
+exec(open("xfer/__version__.py").read())
 
 
 setup(
     name="test_fungi-d",
-    version=get_version(),
+    version=__version__,
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
