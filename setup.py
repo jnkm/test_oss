@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 
 # get __version__ variable
-exec(open("xfer/__version__.py").read())
+exec(open("projname/__version__.py").read())
 
 
 setup(
