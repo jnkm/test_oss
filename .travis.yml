@@ -1,24 +1,24 @@
 language: python
 python:
-- '3.4'
-- '3.5'
+  - '3.4'
+  - '3.5'
 install:
-- pip install -r requirements.txt
-- pip install -r test_requirements.txt
+  - pip install -r requirements.txt
+  - pip install -r test_requirements.txt
 script:
-- nosetests --with-coverage test/*
-- flake8
+  - nosetests --with-coverage test/*
+  - flake8
 after_success:
-- codecov
+  - codecov
 jobs:
   include:
-  - stage: release
-    python: '3.6'
-    deploy:
-      provider: pypi
-      server: https://test.pypi.org/legacy/
-      user: jnkm
-      password:
-        secure: kuRnH4GlvifWFQC+ltFMjxmx2gGfXu3kyH98meOvhq6pdo81UglCcuplVe+Z7jZx2s0Mljx7vFBSkzfxe/jBfYVTLGDNYMJ0YWnAkhOBvjVvxkr5OSZ0+QLyC5GGSG6c0pduQigwwiMOID+B+7k5347nyp2JsoUGH9FWMljB35WBI7bFiD2LU6AFHm4POdpnJ+RSgzcDGyGghsvS1Pk3k2IYFBWnTuSmq5kkItO8KRoTlEd4YGd6ZzuqqHnrVnrfSlfPCNGSJQn2CK8s5B4j34WeK87hRjnrP50qfUG+J/HRLMNXt79YFpgnlFw224Hf4gTUTIZU8gQMje8wb7mLsclSdkn2paFn+Rj9LnrS8DHeNE26IgowrBFpWRVNbNWDut3oFBj1uIMCKt9ctvf3VNMW83Jv+G5JcFq8wgkspqxrVa3HTkAHIPGrtc40LryzWBapL+2e/IvLDSv/AG9fH09RnHk51qIkxvvDVT/OnmU8g/WqZfS/oJMoSI0sceI/B0THqx1kerNtvezHNlVtsNAutwU3F81uQ3/sWCGEnLIccdfxniZJjdk5grSuKflYOUhzSdbnwYJmCmia63YU7ussed19Z3EVQ3/AE/a5SgET+O0Vo+SRBEBlNr/e7iPPsxAMYRClBap1TPsnqSCHy1CnRhSqFccuzlRnyvsW5Cg=
-      on:
-        branch: master
+    - stage: release
+      python: '3.6'
+      deploy:
+        provider: pypi
+        server: https://test.pypi.org/legacy/  # replace for deployment to real pypi
+        user: jnkm # replace with correct username
+        password:
+          secure: kuRnH4GlvifWFQC+ltFMjxmx2gGfXu3kyH98meOvhq6pdo81UglCcuplVe+Z7jZx2s0Mljx7vFBSkzfxe/jBfYVTLGDNYMJ0YWnAkhOBvjVvxkr5OSZ0+QLyC5GGSG6c0pduQigwwiMOID+B+7k5347nyp2JsoUGH9FWMljB35WBI7bFiD2LU6AFHm4POdpnJ+RSgzcDGyGghsvS1Pk3k2IYFBWnTuSmq5kkItO8KRoTlEd4YGd6ZzuqqHnrVnrfSlfPCNGSJQn2CK8s5B4j34WeK87hRjnrP50qfUG+J/HRLMNXt79YFpgnlFw224Hf4gTUTIZU8gQMje8wb7mLsclSdkn2paFn+Rj9LnrS8DHeNE26IgowrBFpWRVNbNWDut3oFBj1uIMCKt9ctvf3VNMW83Jv+G5JcFq8wgkspqxrVa3HTkAHIPGrtc40LryzWBapL+2e/IvLDSv/AG9fH09RnHk51qIkxvvDVT/OnmU8g/WqZfS/oJMoSI0sceI/B0THqx1kerNtvezHNlVtsNAutwU3F81uQ3/sWCGEnLIccdfxniZJjdk5grSuKflYOUhzSdbnwYJmCmia63YU7ussed19Z3EVQ3/AE/a5SgET+O0Vo+SRBEBlNr/e7iPPsxAMYRClBap1TPsnqSCHy1CnRhSqFccuzlRnyvsW5Cg=
+        on:
+          branch: master
