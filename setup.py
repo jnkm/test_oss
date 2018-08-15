@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import os
 
 
 with open("README.md", "r") as fh:
@@ -12,7 +11,7 @@ exec(open("xfer/__version__.py").read())
 
 setup(
     name="test_fungi-d",
-    version=__version__,
+    version=__version__,  # noqa
     author="Example Author",
     author_email="author@example.com",
     description="A small example package",
