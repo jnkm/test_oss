@@ -6,8 +6,7 @@ install:
   - pip install -r requirements.txt
   - pip install -r test_requirements.txt
 script:
-  - nosetests --with-coverage test/unit/
-  - nosetests --with-coverage test/integ
+  - nosetests --with-coverage test/
   - flake8
 after_success:
   - codecov
