@@ -47,6 +47,12 @@ after_success:
   - codecov
 jobs:
   include:
+    - os: osx
+      language: generic
+      env: PYTHON=3.5.1
+    - os: linux
+      language: python
+      python: 3.4
     - stage: release
       python: '3.6'
       deploy:
