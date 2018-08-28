@@ -41,6 +41,19 @@ after_success:
   - codecov
 jobs:
   include:
+    - stage: unit
+      - os: osx
+        language: generic
+        env: PYTHON=3.4.4
+        script:
+          - flake8
+          - nosetests --with-coverage test/unit
+      - os: linux
+        language: python
+        python: 3.4
+        script:
+          - flake8
+          - nosetests --with-coverage test/unit
     - os: osx
       language: generic
       env: PYTHON=3.5.1
