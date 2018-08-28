@@ -1,5 +1,12 @@
-
 language: python
+matrix:
+  include:
+  - os: osx
+    language: generic
+    env: PYTHON=3.3.6
+  - os: osx
+    language: generic
+    env: PYTHON=3.4.4
 before_install: |
   if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     brew update
