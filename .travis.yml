@@ -49,10 +49,25 @@ jobs:
   include:
     - os: osx
       language: generic
-      env: PYTHON=3.5.1
+      env: PYTHON=3.3.6
+    - os: linux
+      language: python
+      python: 3.3
+    - os: osx
+      language: generic
+      env: PYTHON=3.4.4
     - os: linux
       language: python
       python: 3.4
+    - os: osx
+      language: generic
+      env: PYTHON=3.5.1
+    - os: linux
+      language: python
+      python: 3.5
+    - os: osx
+      language: generic
+      env: PYTHON=3.6.6
     - stage: release
       python: '3.6'
       deploy:
