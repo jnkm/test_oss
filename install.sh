@@ -2,6 +2,7 @@
 
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
   brew update
+  brew install openssl readline
   
   wget https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
   bash ~/miniconda.sh -b -p $HOME/miniconda
@@ -9,3 +10,4 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
   
   conda create --yes -q -n build-env python=$PYTHON
 fi
+
