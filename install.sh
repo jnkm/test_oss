@@ -16,5 +16,4 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
   pwd
   source venv/bin/activate
   python --version
-  pip freeze
 fi
