@@ -35,8 +35,8 @@ install:
   - pip install -r test_requirements.txt
   - pip install nose
 script:
-  - nosetests --with-coverage test/*
   - flake8
+  - nosetests --with-coverage test/unit
 after_success:
   - codecov
 jobs:
@@ -45,11 +45,9 @@ jobs:
       os: osx
       language: generic
       env: PYTHON=3.4.4
-      script: flake8; nosetests --with-coverage test/unit
     - os: linux
       language: python
       python: 3.4
-      script: flake8; nosetests --with-coverage test/unit
     - os: osx
       language: generic
       env: PYTHON=3.5.1
@@ -59,23 +57,30 @@ jobs:
     - os: osx
       language: generic
       env: PYTHON=3.6.6
-    - os: osx
+    - stage: integ
+      os: osx
       language: generic
       env: PYTHON=3.4.4
+      script: nosetests test/integ
     - os: linux
       language: python
       python: 3.4
+      script: nosetests test/integ
     - os: osx
       language: generic
       env: PYTHON=3.5.1
+      script: nosetests test/integ
     - os: linux
       language: python
       python: 3.5
+      script: nosetests test/integ
     - os: osx
       language: generic
       env: PYTHON=3.6.6
+      script: nosetests test/integ
     - stage: release
       python: '3.6'
+      script: flake8; nosetests test/
       deploy:
         provider: pypi
         server: https://test.pypi.org/legacy/  # replace for deployment to real pypi
