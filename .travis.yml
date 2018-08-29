@@ -4,7 +4,7 @@ python:
   - 3.4
   - 3.5
 before_install:
-  - ./install.sh
+  - bash install.sh
 
 install:
   - pip install -r requirements.txt
