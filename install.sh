@@ -5,7 +5,7 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
   brew outdated openssl || brew upgrade openssl
   brew outdated readline || brew upgrade readline
   
-  brew outdated readline || brew upgrade readline
+  brew outdated pyenv || brew upgrade pyenv
   pyenv install $PYTHON
   export PYENV_VERSION=$PYTHON
   export PATH="/Users/travis/.pyenv/shims:${PATH}"
