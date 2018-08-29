@@ -1,12 +1,4 @@
 language: python
-matrix:
-  include:
-  - os: osx
-    language: generic
-    env: PYTHON=3.3.6
-  - os: osx
-    language: generic
-    env: PYTHON=3.4.4
 before_install: |
   if [ "$TRAVIS_OS_NAME" == "osx" ]; then
     brew update
@@ -41,8 +33,7 @@ after_success:
   - codecov
 jobs:
   include:
-    - stage: unit
-      os: osx
+    - os: osx
       language: generic
       env: PYTHON=3.4.4
     - os: linux
@@ -57,27 +48,6 @@ jobs:
     - os: osx
       language: generic
       env: PYTHON=3.6.6
-    - stage: integ
-      os: osx
-      language: generic
-      env: PYTHON=3.4.4
-      script: nosetests test/integ
-    - os: linux
-      language: python
-      python: 3.4
-      script: nosetests test/integ
-    - os: osx
-      language: generic
-      env: PYTHON=3.5.1
-      script: nosetests test/integ
-    - os: linux
-      language: python
-      python: 3.5
-      script: nosetests test/integ
-    - os: osx
-      language: generic
-      env: PYTHON=3.6.6
-      script: nosetests test/integ
     - stage: release
       python: '3.6'
       script: flake8; nosetests test/
